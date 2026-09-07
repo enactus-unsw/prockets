@@ -264,12 +264,10 @@ export function Component() {
           <h2
             className="text-xs md:text-sm font-mono font-light uppercase tracking-[0.2em] opacity-80"
             style={{ color: colors[200] }}
-          >
-          
-          </h2>
+          ></h2>
           {/**
            * navbar here possibly?
-           * 
+           *
            */}
         </div>
 
@@ -313,22 +311,57 @@ export function Component() {
               className="text-xl md:text-2xl lg:text-3xl font-thin leading-relaxed"
               style={{ color: colors[300] }}
             >
-              <span className="word" data-delay="2950">A</span>
-              <span className="word" data-delay="3080">modular</span>
-              <span className="word" data-delay="3210">transtibial</span>
-              <span className="word" data-delay="3340">prosthetic</span>
-              <span className="word" data-delay="3470">system</span>
-              <span className="word" data-delay="3600">designed</span>
-              <span className="word" data-delay="3730">for</span>
-              <span className="word" data-delay="3860">affordable</span>
-              <span className="word" data-delay="3990">access,</span>
-              <span className="word" data-delay="4120">local</span>
-              <span className="word" data-delay="4250">clinical</span>
-              <span className="word" data-delay="4380">assembly,</span>
-              <span className="word" data-delay="4510">and</span>
-              <span className="word" data-delay="4640">modular</span>
-              <span className="word" data-delay="4770">component</span>
-              <span className="word" data-delay="4900">replacement</span>
+              <span className="word" data-delay="2950">
+                Prockets
+              </span>
+              <span className="word" data-delay="2950">
+                creates
+              </span>
+              <span className="word" data-delay="3080">
+                modular
+              </span>
+              <span className="word" data-delay="3210">
+                transtibial
+              </span>
+              <span className="word" data-delay="3340">
+                prosthetic
+              </span>
+              <span className="word" data-delay="3470">
+                systems
+              </span>
+              <span className="word" data-delay="3600">
+                designed
+              </span>
+              <span className="word" data-delay="3730">
+                for
+              </span>
+              <span className="word" data-delay="3860">
+                affordable
+              </span>
+              <span className="word" data-delay="3990">
+                access,
+              </span>
+              <span className="word" data-delay="4120">
+                local
+              </span>
+              <span className="word" data-delay="4250">
+                clinical
+              </span>
+              <span className="word" data-delay="4380">
+                assembly,
+              </span>
+              <span className="word" data-delay="4510">
+                and
+              </span>
+              <span className="word" data-delay="4640">
+                modular
+              </span>
+              <span className="word" data-delay="4770">
+                component
+              </span>
+              <span className="word" data-delay="4900">
+                replacement
+              </span>
             </div>
           </h1>
           <div
