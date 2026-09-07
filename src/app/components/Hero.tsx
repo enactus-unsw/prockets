@@ -265,37 +265,12 @@ export function Component() {
             className="text-xs md:text-sm font-mono font-light uppercase tracking-[0.2em] opacity-80"
             style={{ color: colors[200] }}
           >
-            <span className="word" data-delay="0">
-              Welcome
-            </span>
-            <span className="word" data-delay="200">
-              to
-            </span>
-            <span className="word" data-delay="400">
-              <b>StackPilot</b>
-            </span>
-            <span className="word" data-delay="600">
-              — 
-            </span>
-            <span className="word" data-delay="800">
-              Powering
-            </span>
-            <span className="word" data-delay="1000">
-              your
-            </span>
-            <span className="word" data-delay="1200">
-              digital
-            </span>
-            <span className="word" data-delay="1400">
-              transformation.
-            </span>
+          
           </h2>
-          <div
-            className="mt-4 w-16 h-px opacity-30"
-            style={{
-              background: `linear-gradient(to right, transparent, ${colors[200]}, transparent)`,
-            }}
-          ></div>
+          {/**
+           * navbar here possibly?
+           * 
+           */}
         </div>
 
         {/* Main headline */}
@@ -338,44 +313,22 @@ export function Component() {
               className="text-xl md:text-2xl lg:text-3xl font-thin leading-relaxed"
               style={{ color: colors[300] }}
             >
-              <span className="word">
-                A modular transtibial prosthetic system designed for affordable
-                access, local clinical assembly, and modular component
-                replacement
-              </span>
-              {/* <span className="word" data-delay="2600">
-                Integrate,
-              </span>
-              <span className="word" data-delay="2750">
-                orchestrate,
-              </span>
-              <span className="word" data-delay="2900">
-                and
-              </span>
-              <span className="word" data-delay="3050">
-                scale
-              </span>
-              <span className="word" data-delay="3200">
-                your
-              </span>
-              <span className="word" data-delay="3350">
-                business
-              </span>
-              <span className="word" data-delay="3500">
-                — all
-              </span>
-              <span className="word" data-delay="3650">
-                in
-              </span>
-              <span className="word" data-delay="3800">
-                one
-              </span>
-              <span className="word" data-delay="3950">
-                secure
-              </span>
-              <span className="word" data-delay="4100">
-                platform.
-              </span> */}
+              <span className="word" data-delay="2950">A</span>
+              <span className="word" data-delay="3080">modular</span>
+              <span className="word" data-delay="3210">transtibial</span>
+              <span className="word" data-delay="3340">prosthetic</span>
+              <span className="word" data-delay="3470">system</span>
+              <span className="word" data-delay="3600">designed</span>
+              <span className="word" data-delay="3730">for</span>
+              <span className="word" data-delay="3860">affordable</span>
+              <span className="word" data-delay="3990">access,</span>
+              <span className="word" data-delay="4120">local</span>
+              <span className="word" data-delay="4250">clinical</span>
+              <span className="word" data-delay="4380">assembly,</span>
+              <span className="word" data-delay="4510">and</span>
+              <span className="word" data-delay="4640">modular</span>
+              <span className="word" data-delay="4770">component</span>
+              <span className="word" data-delay="4900">replacement</span>
             </div>
           </h1>
           <div
