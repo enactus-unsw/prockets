@@ -395,22 +395,28 @@ export function Component() {
             style={{ color: colors[200] }}
           >
             <span className="word" data-delay="4400">
-              Real-time
+              Early
             </span>
             <span className="word" data-delay="4550">
-              analytics,
+              Stage
             </span>
             <span className="word" data-delay="4700">
-              seamless
+              Runner-Up,
             </span>
             <span className="word" data-delay="4850">
-              integrations,
+              Enactus
             </span>
             <span className="word" data-delay="5000">
-              enterprise-grade
+              Australia
             </span>
             <span className="word" data-delay="5150">
-              security.
+              National
+            </span>
+            <span className="word" data-delay="5300">
+              Championships
+            </span>
+            <span className="word" data-delay="5450">
+              2026
             </span>
           </h2>
           <div
