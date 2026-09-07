@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { colors } from "./Hero";
 
 export function MissionSection() {
@@ -29,6 +30,9 @@ export function MissionSection() {
             be assembled and fitted locally, at a fraction of the cost of
             traditional devices.
           </p>
+          <Link href="/mission" className="underline">
+            Learn more about our mission
+          </Link>
           <div className="grid grid-cols-3 gap-6 pt-4">
             <div>
               <div
