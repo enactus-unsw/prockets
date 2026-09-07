@@ -2,7 +2,7 @@
 
 import React, { useEffect, useRef } from "react";
 
-const colors = {
+export const colors = {
   50: "#f8f7f5",
   100: "#e6e1d7",
   200: "#c8b4a0",
