@@ -3,7 +3,7 @@ import { colors } from "./Hero";
 
 export function MissionSection() {
   return (
-    <section className="bg-[#1a1d18] text-[#e6e1d7] px-8 py-32 md:px-20 md:py-60">
+    <section className="bg-black text-[#e6e1d7] px-8 py-32 md:px-20 md:py-60">
       <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 md:gap-20 items-center">
         <div>
           <span
@@ -103,7 +103,7 @@ const services = [
 
 export function ServicesSection() {
   return (
-    <section className="bg-black text-[#e6e1d7] px-8 py-24 md:px-16 md:py-60">
+    <section className="bg-[#1a1d18] text-[#e6e1d7] px-8 py-24 md:px-16 md:py-60">
       <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 md:gap-20 items-center">
         <div>
           <span
