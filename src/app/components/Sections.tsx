@@ -1,5 +1,62 @@
 import Link from "next/link";
+import Image from "next/image";
 import { colors } from "./Hero";
+
+const sponsors: {
+  name: string;
+  logo: string;
+  href: string;
+  heightClass?: string;
+}[] = [
+  {
+    name: "OAPL",
+    logo: "/sponsors/oapl.webp",
+    href: "https://oapl.com.au/",
+  },
+  {
+    name: "AmputeesNSW",
+    logo: "/sponsors/amputees_nsw.png",
+    href: "https://amputeesnsw.org.au/",
+    heightClass: "h-14 md:h-22",
+  },
+  {
+    name: "Limbs4Life",
+    logo: "/sponsors/limbs4life.png",
+    href: "https://www.limbs4life.org.au/",
+    heightClass: "h-10 md:h-18",
+  },
+];
+
+export function SponsorsSection() {
+  return (
+    <section className="bg-black px-8 py-12 md:px-20 md:py-16">
+      <div className="max-w-6xl mx-auto">
+        <p className="text-center text-white font-mono text-xs uppercase tracking-[0.2em] opacity-70">
+          Supported by
+        </p>
+        <div className="mt-8 flex flex-wrap items-center justify-center gap-12 md:gap-20">
+          {sponsors.map((sponsor) => (
+            <a
+              key={sponsor.name}
+              href={sponsor.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="opacity-60 transition-opacity hover:opacity-100"
+            >
+              <Image
+                src={sponsor.logo}
+                alt={sponsor.name}
+                width={400}
+                height={120}
+                className={`w-auto ${sponsor.heightClass ?? "h-8 md:h-14"}`}
+              />
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
 
 export function MissionSection() {
   return (
