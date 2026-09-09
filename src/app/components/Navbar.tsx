@@ -6,8 +6,10 @@ import { Menu, X } from "lucide-react";
 import { colors } from "./Hero";
 
 const links = [
-  { href: "/", label: "Home" },
+  { href: "/product", label: "Product" },
+  { href: "/services", label: "Services" },
   { href: "/mission", label: "Mission" },
+  { href: "/contact", label: "Contact" },
 ];
 
 export function Navbar() {
