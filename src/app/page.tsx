@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { Component } from "./components/Hero";
+import { HeroSection } from "./components/Hero";
 import {
   MissionSection,
   ServicesSection,
@@ -9,7 +9,7 @@ import {
 export default function Home() {
   return (
     <>
-      <Component />
+      <HeroSection />
       <ProductSection />
       <MissionSection />
       <ServicesSection />

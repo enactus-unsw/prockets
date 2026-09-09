@@ -15,7 +15,7 @@ export const colors = {
   900: "#1a1d18",
 };
 
-export function HeroComponent() {
+export function HeroSection() {
   const gradientRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
