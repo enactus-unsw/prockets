@@ -10,9 +10,9 @@ export default function Home() {
   return (
     <>
       <Component />
+      <ProductSection />
       <MissionSection />
       <ServicesSection />
-      <ProductSection />
     </>
   );
 }
