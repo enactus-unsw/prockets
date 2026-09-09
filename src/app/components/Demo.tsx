@@ -1,5 +1,5 @@
-import { Component } from "./Hero";
+import { HeroSection } from "./Hero";
 
 export default function DemoOne() {
-  return <Component />;
+  return <HeroSection />;
 }
