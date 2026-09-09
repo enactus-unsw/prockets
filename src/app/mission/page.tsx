@@ -1,5 +1,11 @@
-import Link from "next/link";
 import { colors } from "../components/Hero";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Mission | Prockets",
+  description:
+    "Why Prockets exists, how we got here, and where we're going next.",
+};
 
 const timeline = [
   {
