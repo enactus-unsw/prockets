@@ -15,7 +15,7 @@ export const colors = {
   900: "#1a1d18",
 };
 
-export function Component() {
+export function HeroComponent() {
   const gradientRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -274,7 +274,7 @@ export function Component() {
         {/* Main headline */}
         <div className="text-center max-w-5xl mx-auto">
           <h1
-            className="text-3xl md:text-5xl lg:text-6xl font-extralight leading-tight tracking-tight text-decoration"
+            className="font-serif text-3xl md:text-4xl lg:text-6xl font-extralight leading-tight tracking-tight text-decoration"
             style={{ color: colors[50] }}
           >
             <div className="mb-4 md:mb-6">
@@ -308,7 +308,7 @@ export function Component() {
               </span>
             </div>
             <div
-              className="text-xl md:text-2xl lg:text-3xl font-thin leading-relaxed"
+              className="font-sans text-xl md:text-2xl lg:text-2xl font-medium leading-relaxed"
               style={{ color: colors[300] }}
             >
               <span className="word" data-delay="2950">
