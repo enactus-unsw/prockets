@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { colors } from "./Hero";
+import { colors, accent } from "./Hero";
 
 const sponsors: {
   name: string;
@@ -29,9 +29,15 @@ const sponsors: {
 
 export function SponsorsSection() {
   return (
-    <section className="bg-black px-8 py-12 md:px-20 md:py-16">
+    <section
+      className="px-8 py-12 md:px-20 md:py-16"
+      style={{ background: colors[900] }}
+    >
       <div className="max-w-6xl mx-auto">
-        <p className="text-center text-white font-mono text-xs uppercase tracking-[0.2em] opacity-70">
+        <p
+          className="text-center font-mono text-xs uppercase tracking-[0.2em] opacity-70"
+          style={{ color: colors[200] }}
+        >
           Supported by
         </p>
         <div className="mt-8 flex flex-wrap items-center justify-center gap-12 md:gap-20">
@@ -60,12 +66,15 @@ export function SponsorsSection() {
 
 export function MissionSection() {
   return (
-    <section className="bg-black text-[#e6e1d7] px-8 py-32 md:px-20 md:py-60">
+    <section
+      className="px-8 py-32 md:px-20 md:py-60"
+      style={{ background: colors[900], color: colors[100] }}
+    >
       <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 md:gap-20 items-center">
         <div>
           <span
             className="font-mono text-xs uppercase tracking-[0.2em] opacity-70"
-            style={{ color: colors[200] }}
+            style={{ color: accent.DEFAULT }}
           >
             Our Mission
           </span>
@@ -87,7 +96,11 @@ export function MissionSection() {
             be assembled and fitted locally, at a fraction of the cost of
             traditional devices.
           </p>
-          <Link href="/mission" className="underline">
+          <Link
+            href="/mission"
+            className="inline-block underline underline-offset-4 decoration-1 transition-colors"
+            style={{ color: accent.DEFAULT }}
+          >
             Learn more about our mission
           </Link>
           <div className="grid grid-cols-3 gap-6 pt-4">
@@ -160,12 +173,15 @@ const services = [
 
 export function ServicesSection() {
   return (
-    <section className="bg-[#1a1d18] text-[#e6e1d7] px-8 py-24 md:px-16 md:py-60">
+    <section
+      className="px-8 py-24 md:px-16 md:py-60"
+      style={{ background: colors[800], color: colors[100] }}
+    >
       <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 md:gap-20 items-center">
         <div>
           <span
             className="font-mono text-xs uppercase tracking-[0.2em] opacity-70"
-            style={{ color: colors[200] }}
+            style={{ color: accent.DEFAULT }}
           >
             What We Do
           </span>
@@ -181,7 +197,7 @@ export function ServicesSection() {
             <div key={service.title}>
               <div
                 className="w-8 h-px mb-4"
-                style={{ background: colors[200] }}
+                style={{ background: accent.DEFAULT }}
               ></div>
               <h3
                 className="text-sm font-mono uppercase tracking-wide mb-2"
@@ -211,7 +227,10 @@ const productFeatures = [
 
 export function ProductSection() {
   return (
-    <section className="bg-[#1a1d18] text-[#e6e1d7] px-8 py-24 md:px-16 md:py-28">
+    <section
+      className="px-8 py-24 md:px-16 md:py-28"
+      style={{ background: colors[800], color: colors[100] }}
+    >
       <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 md:gap-20 items-center">
         <div
           className="order-2 md:order-1 aspect-square rounded-lg border flex items-center justify-center"
@@ -227,7 +246,7 @@ export function ProductSection() {
         <div className="order-1 md:order-2">
           <span
             className="font-mono text-xs uppercase tracking-[0.2em] opacity-70"
-            style={{ color: colors[200] }}
+            style={{ color: accent.DEFAULT }}
           >
             The Product
           </span>
@@ -246,7 +265,7 @@ export function ProductSection() {
               >
                 <span
                   className="mt-2 w-1.5 h-1.5 rounded-full shrink-0"
-                  style={{ background: colors[200] }}
+                  style={{ background: accent.DEFAULT }}
                 ></span>
                 {feature}
               </li>
