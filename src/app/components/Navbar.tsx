@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
@@ -26,9 +27,17 @@ export function Navbar() {
       <div className="max-w-6xl mx-auto flex items-center justify-between px-6 py-4 md:px-10">
         <Link
           href="/"
-          className="font-mono text-sm uppercase tracking-[0.2em]"
+          className="flex items-center gap-3 font-mono text-sm uppercase tracking-[0.2em]"
           style={{ color: colors[50] }}
         >
+          <Image
+            src="/prockets_logo.png"
+            alt="Prockets logo"
+            width={160}
+            height={160}
+            className="h-8 w-auto"
+            priority
+          />
           Prockets
         </Link>
 
