@@ -1,4 +1,4 @@
-import { colors } from "../components/Hero";
+import { colors, accent } from "../components/Hero";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -37,7 +37,10 @@ const timeline = [
 export default function MissionPage() {
   return (
     <>
-      <section className="bg-[#1a1d18] text-[#e6e1d7] px-8 py-24 md:px-20 md:py-32">
+      <section
+        className="px-8 py-24 md:px-20 md:py-32"
+        style={{ background: colors[800], color: colors[100] }}
+      >
         <div className="max-w-3xl mx-auto">
           <h1
             className="mt-4 text-3xl md:text-5xl font-extralight leading-tight"
@@ -67,11 +70,14 @@ export default function MissionPage() {
         </div>
       </section>
 
-      <section className="bg-black text-[#e6e1d7] px-8 py-24 md:px-20 md:py-32">
+      <section
+        className="px-8 py-24 md:px-20 md:py-32"
+        style={{ background: colors[900], color: colors[100] }}
+      >
         <div className="max-w-3xl mx-auto">
           <span
-            className="font-mono text-xs uppercase tracking-[0.2em] opacity-70"
-            style={{ color: colors[200] }}
+            className="font-mono text-xs uppercase tracking-[0.2em]"
+            style={{ color: accent.DEFAULT }}
           >
             Timeline
           </span>
@@ -86,7 +92,7 @@ export default function MissionPage() {
               <div key={item.title} className="relative pl-8">
                 <div
                   className="absolute top-1.5 left-0 w-4 h-px"
-                  style={{ background: colors[200] }}
+                  style={{ background: accent.DEFAULT }}
                 ></div>
                 <div
                   className="text-xs font-mono uppercase tracking-wide opacity-70"
@@ -112,11 +118,14 @@ export default function MissionPage() {
         </div>
       </section>
 
-      <section className="bg-[#1a1d18] text-[#e6e1d7] px-8 py-24 md:px-20 md:py-32">
+      <section
+        className="px-8 py-24 md:px-20 md:py-32"
+        style={{ background: colors[800], color: colors[100] }}
+      >
         <div className="max-w-3xl mx-auto">
           <span
-            className="font-mono text-xs uppercase tracking-[0.2em] opacity-70"
-            style={{ color: colors[200] }}
+            className="font-mono text-xs uppercase tracking-[0.2em]"
+            style={{ color: accent.DEFAULT }}
           >
             History
           </span>

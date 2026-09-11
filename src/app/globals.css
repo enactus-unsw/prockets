@@ -66,14 +66,14 @@
 }
 
 .grid-line {
-  stroke: rgba(200, 180, 160, 0.15);
+  stroke: color-mix(in srgb, var(--p-200) 15%, transparent);
   stroke-width: 1;
   opacity: 0;
   animation: fade-in 1s ease-out forwards;
 }
 
 .detail-dot {
-  fill: rgba(200, 180, 160, 0.4);
+  fill: color-mix(in srgb, var(--p-accent) 45%, transparent);
   opacity: 0;
   animation: fade-in 1s ease-out forwards;
 }
@@ -100,7 +100,7 @@
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: rgba(200, 180, 160, 0.3);
+  background: color-mix(in srgb, var(--p-accent) 30%, transparent);
   opacity: 0.3;
   animation: float 6s ease-in-out infinite;
   animation-play-state: paused;
@@ -130,24 +130,44 @@
 }
 
 :root {
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.97 0 0);
-  --secondary-foreground: oklch(0.205 0 0);
-  --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.97 0 0);
-  --accent-foreground: oklch(0.205 0 0);
+  /**
+   * Brand palette. Mirrors the `colors` / `accent` exports in
+   * components/Hero.tsx — keep the two in sync.
+   */
+  --p-50: #faf8f5;
+  --p-100: #e8e2d8;
+  --p-200: #c8b4a0;
+  --p-300: #a89080;
+  --p-400: #8a7060;
+  --p-500: #6b5545;
+  --p-600: #4a3c31;
+  --p-700: #332e28;
+  --p-800: #23201c;
+  --p-900: #171512;
+  --p-accent: #fbc74c;
+  --p-accent-hi: #fdd97f;
+  --p-accent-lo: #e0a92f;
+  --p-accent-ink: #1b1712;
+
+  /* shadcn tokens, mapped onto the brand palette (the site runs dark) */
+  --background: var(--p-900);
+  --foreground: var(--p-100);
+  --card: var(--p-800);
+  --card-foreground: var(--p-100);
+  --popover: var(--p-800);
+  --popover-foreground: var(--p-100);
+  --primary: var(--p-accent);
+  --primary-foreground: var(--p-accent-ink);
+  --secondary: var(--p-700);
+  --secondary-foreground: var(--p-100);
+  --muted: var(--p-700);
+  --muted-foreground: var(--p-300);
+  --accent: var(--p-accent);
+  --accent-foreground: var(--p-accent-ink);
   --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.922 0 0);
-  --input: oklch(0.922 0 0);
-  --ring: oklch(0.708 0 0);
+  --border: color-mix(in srgb, var(--p-200) 12%, transparent);
+  --input: color-mix(in srgb, var(--p-200) 18%, transparent);
+  --ring: var(--p-accent);
   --chart-1: oklch(0.87 0 0);
   --chart-2: oklch(0.556 0 0);
   --chart-3: oklch(0.439 0 0);
@@ -164,25 +184,26 @@
   --sidebar-ring: oklch(0.708 0 0);
 }
 
+/* The site is dark by default, so .dark only needs to hold that line. */
 .dark {
-  --background: oklch(0.145 0 0);
-  --foreground: oklch(0.985 0 0);
-  --card: oklch(0.205 0 0);
-  --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.205 0 0);
-  --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.922 0 0);
-  --primary-foreground: oklch(0.205 0 0);
-  --secondary: oklch(0.269 0 0);
-  --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.269 0 0);
-  --muted-foreground: oklch(0.708 0 0);
-  --accent: oklch(0.269 0 0);
-  --accent-foreground: oklch(0.985 0 0);
+  --background: var(--p-900);
+  --foreground: var(--p-100);
+  --card: var(--p-800);
+  --card-foreground: var(--p-100);
+  --popover: var(--p-800);
+  --popover-foreground: var(--p-100);
+  --primary: var(--p-accent);
+  --primary-foreground: var(--p-accent-ink);
+  --secondary: var(--p-700);
+  --secondary-foreground: var(--p-100);
+  --muted: var(--p-700);
+  --muted-foreground: var(--p-300);
+  --accent: var(--p-accent);
+  --accent-foreground: var(--p-accent-ink);
   --destructive: oklch(0.704 0.191 22.216);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.556 0 0);
+  --border: color-mix(in srgb, var(--p-200) 12%, transparent);
+  --input: color-mix(in srgb, var(--p-200) 18%, transparent);
+  --ring: var(--p-accent);
   --chart-1: oklch(0.87 0 0);
   --chart-2: oklch(0.556 0 0);
   --chart-3: oklch(0.439 0 0);

@@ -2,18 +2,45 @@
 
 import React, { useEffect, useRef } from "react";
 
+/**
+ * Warm neutral ramp, single hue family (~23-37deg) so the darks belong to the
+ * same palette as the mids. Mirrored as --p-* custom properties in globals.css
+ * for the plain-CSS classes; keep the two in sync.
+ */
 export const colors = {
-  50: "#f8f7f5",
-  100: "#e6e1d7",
+  50: "#faf8f5",
+  100: "#e8e2d8",
   200: "#c8b4a0",
   300: "#a89080",
   400: "#8a7060",
   500: "#6b5545",
-  600: "#544237",
-  700: "#3c4237",
-  800: "#2a2e26",
-  900: "#1a1d18",
+  600: "#4a3c31",
+  700: "#332e28",
+  800: "#23201c",
+  900: "#171512",
 };
+
+/** Logo amber. Used sparingly: primary CTA, active nav, rules, hero glow. */
+export const accent = {
+  DEFAULT: "#fbc74c",
+  hi: "#fdd97f",
+  lo: "#e0a92f",
+  /** Near-black for text sitting on a filled accent surface (11.4:1). */
+  ink: "#1b1712",
+};
+
+/**
+ * Diameter of the glow that trails the cursor, in px. The element is centred on
+ * the pointer by offsetting half of this, so both uses read from here.
+ */
+const GLOW_SIZE = 220;
+
+/** rgba() helper for the translucent washes the hero leans on. */
+export function alpha(hex: string, a: number) {
+  const h = hex.replace("#", "");
+  const n = parseInt(h, 16);
+  return `rgba(${(n >> 16) & 255}, ${(n >> 8) & 255}, ${n & 255}, ${a})`;
+}
 
 export function HeroSection() {
   const gradientRef = useRef<HTMLDivElement>(null);
@@ -32,8 +59,8 @@ export function HeroSection() {
     const gradient = gradientRef.current;
     function onMouseMove(e: MouseEvent) {
       if (gradient) {
-        gradient.style.left = e.clientX - 192 + "px";
-        gradient.style.top = e.clientY - 192 + "px";
+        gradient.style.left = e.clientX - GLOW_SIZE / 2 + "px";
+        gradient.style.top = e.clientY - GLOW_SIZE / 2 + "px";
         gradient.style.opacity = "1";
       }
     }
@@ -46,7 +73,7 @@ export function HeroSection() {
     // Word hover effects
     words.forEach((word) => {
       word.addEventListener("mouseenter", () => {
-        word.style.textShadow = "0 0 20px rgba(200, 180, 160, 0.5)";
+        word.style.textShadow = `0 0 20px ${alpha(accent.DEFAULT, 0.35)}`;
       });
       word.addEventListener("mouseleave", () => {
         word.style.textShadow = "none";
@@ -61,7 +88,7 @@ export function HeroSection() {
       ripple.style.top = e.clientY + "px";
       ripple.style.width = "4px";
       ripple.style.height = "4px";
-      ripple.style.background = "rgba(200, 180, 160, 0.6)";
+      ripple.style.background = alpha(accent.DEFAULT, 0.6);
       ripple.style.borderRadius = "50%";
       ripple.style.transform = "translate(-50%, -50%)";
       ripple.style.pointerEvents = "none";
@@ -96,7 +123,13 @@ export function HeroSection() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-[#1a1d18] via-black to-[#2a2e26] text-[#e6e1d7] font-primary overflow-hidden relative w-full">
+    <div
+      className="min-h-screen font-primary overflow-hidden relative w-full"
+      style={{
+        background: `linear-gradient(to bottom right, ${colors[900]}, #000, ${colors[800]})`,
+        color: colors[100],
+      }}
+    >
       <svg
         className="absolute inset-0 w-full h-full"
         xmlns="http://www.w3.org/2000/svg"
@@ -111,7 +144,7 @@ export function HeroSection() {
             <path
               d="M 60 0 L 0 0 0 60"
               fill="none"
-              stroke="rgba(200,180,160,0.08)"
+              stroke={alpha(colors[200], 0.08)}
               strokeWidth="0.5"
             />
           </pattern>
@@ -385,9 +418,9 @@ export function HeroSection() {
         {/* Bottom tagline */}
         <div className="text-center">
           <div
-            className="mb-4 w-16 h-px opacity-30"
+            className="mb-4 w-16 h-px opacity-60"
             style={{
-              background: `linear-gradient(to right, transparent, ${colors[200]}, transparent)`,
+              background: `linear-gradient(to right, transparent, ${accent.DEFAULT}, transparent)`,
             }}
           ></div>
           <h2
@@ -428,15 +461,15 @@ export function HeroSection() {
           >
             <div
               className="w-1 h-1 rounded-full opacity-40"
-              style={{ background: colors[200] }}
+              style={{ background: accent.DEFAULT }}
             ></div>
             <div
-              className="w-1 h-1 rounded-full opacity-60"
-              style={{ background: colors[200] }}
+              className="w-1 h-1 rounded-full opacity-80"
+              style={{ background: accent.DEFAULT }}
             ></div>
             <div
               className="w-1 h-1 rounded-full opacity-40"
-              style={{ background: colors[200] }}
+              style={{ background: accent.DEFAULT }}
             ></div>
           </div>
         </div>
@@ -445,9 +478,11 @@ export function HeroSection() {
       <div
         id="mouse-gradient"
         ref={gradientRef}
-        className="fixed pointer-events-none w-96 h-96 rounded-full blur-3xl transition-all duration-500 ease-out opacity-0"
+        className="fixed pointer-events-none rounded-full blur-2xl transition-all duration-500 ease-out opacity-0"
         style={{
-          background: `radial-gradient(circle, ${colors[500]}0D 0%, transparent 100%)`,
+          width: GLOW_SIZE,
+          height: GLOW_SIZE,
+          background: `radial-gradient(circle, ${alpha(accent.DEFAULT, 0.08)} 0%, ${alpha(accent.DEFAULT, 0.03)} 45%, transparent 70%)`,
         }}
       ></div>
     </div>

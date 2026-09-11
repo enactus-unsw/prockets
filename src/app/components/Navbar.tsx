@@ -2,9 +2,10 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
-import { colors } from "./Hero";
+import { colors, accent } from "./Hero";
 
 const links = [
   { href: "/product", label: "Product" },
@@ -15,6 +16,7 @@ const links = [
 
 export function Navbar() {
   const [open, setOpen] = useState(false);
+  const pathname = usePathname();
 
   return (
     <header
@@ -42,16 +44,23 @@ export function Navbar() {
         </Link>
 
         <nav className="hidden md:flex items-center gap-8">
-          {links.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className="font-mono text-xs uppercase tracking-[0.2em] opacity-70 transition-opacity hover:opacity-100"
-              style={{ color: colors[200] }}
-            >
-              {link.label}
-            </Link>
-          ))}
+          {links.map((link) => {
+            const active = pathname === link.href;
+            return (
+              <Link
+                key={link.href}
+                href={link.href}
+                aria-current={active ? "page" : undefined}
+                className="font-mono text-xs uppercase tracking-[0.2em] transition-opacity hover:opacity-100"
+                style={{
+                  color: active ? accent.DEFAULT : colors[200],
+                  opacity: active ? 1 : 0.7,
+                }}
+              >
+                {link.label}
+              </Link>
+            );
+          })}
         </nav>
 
         <button
@@ -67,17 +76,24 @@ export function Navbar() {
 
       {open && (
         <nav className="flex flex-col gap-1 px-6 pb-4 md:hidden">
-          {links.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              onClick={() => setOpen(false)}
-              className="py-2 font-mono text-xs uppercase tracking-[0.2em] opacity-70 hover:opacity-100"
-              style={{ color: colors[200] }}
-            >
-              {link.label}
-            </Link>
-          ))}
+          {links.map((link) => {
+            const active = pathname === link.href;
+            return (
+              <Link
+                key={link.href}
+                href={link.href}
+                onClick={() => setOpen(false)}
+                aria-current={active ? "page" : undefined}
+                className="py-2 font-mono text-xs uppercase tracking-[0.2em] hover:opacity-100"
+                style={{
+                  color: active ? accent.DEFAULT : colors[200],
+                  opacity: active ? 1 : 0.7,
+                }}
+              >
+                {link.label}
+              </Link>
+            );
+          })}
         </nav>
       )}
     </header>
