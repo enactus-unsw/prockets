@@ -1,0 +1,109 @@
+- generic [active] [ref=f6e1]:
+  - banner [ref=f6e2]:
+    - generic [ref=f6e3]:
+      - link [ref=f6e4] [cursor=pointer]:
+        - /url: /
+        - img "Prockets logo" [ref=f6e5]
+        - text: Prockets
+      - navigation [ref=f6e6]:
+        - link "Product" [ref=f6e7] [cursor=pointer]:
+          - /url: /product
+        - link "Services" [ref=f6e8] [cursor=pointer]:
+          - /url: /services
+        - link "Mission" [ref=f6e9] [cursor=pointer]:
+          - /url: /mission
+        - link "Contact" [ref=f6e10] [cursor=pointer]:
+          - /url: /contact
+  - generic [ref=f6e31]:
+    - generic:
+      - heading [level=2]
+    - heading "Affordable. Mobile. Stable. Prosthetics designed to move with you. Prockets creates modular transtibial prosthetic systems designed for affordable access, local clinical assembly, and modular component replacement" [level=1] [ref=f6e33]:
+      - generic [ref=f6e34]:
+        - generic [ref=f6e35]: Affordable.
+        - generic [ref=f6e36]: Mobile.
+        - generic [ref=f6e37]: Stable.
+        - generic [ref=f6e38]: Prosthetics
+        - generic [ref=f6e39]: designed
+        - generic [ref=f6e40]: to
+        - generic [ref=f6e41]: move
+        - generic [ref=f6e42]: with
+        - generic [ref=f6e43]: you.
+      - generic [ref=f6e44]:
+        - generic [ref=f6e45]: Prockets
+        - generic [ref=f6e46]: creates
+        - generic [ref=f6e47]: modular
+        - generic [ref=f6e48]: transtibial
+        - generic [ref=f6e49]: prosthetic
+        - generic [ref=f6e50]: systems
+        - generic [ref=f6e51]: designed
+        - generic [ref=f6e52]: for
+        - generic [ref=f6e53]: affordable
+        - generic [ref=f6e54]: access,
+        - generic [ref=f6e55]: local
+        - generic [ref=f6e56]: clinical
+        - generic [ref=f6e57]: assembly,
+        - generic [ref=f6e58]: and
+        - generic [ref=f6e59]: modular
+        - generic [ref=f6e60]: component
+        - generic [ref=f6e61]: replacement
+    - heading "Early Stage Runner-Up, Enactus Australia National Championships 2026" [level=2] [ref=f6e66]:
+      - generic [ref=f6e67]: Early
+      - generic [ref=f6e68]: Stage
+      - generic [ref=f6e69]: Runner-Up,
+      - generic [ref=f6e70]: Enactus
+      - generic [ref=f6e71]: Australia
+      - generic [ref=f6e72]: National
+      - generic [ref=f6e73]: Championships
+      - generic [ref=f6e74]: "2026"
+  - generic [ref=f6e80]:
+    - paragraph [ref=f6e81]: Supported by
+    - generic [ref=f6e82]:
+      - link [ref=f6e83] [cursor=pointer]:
+        - /url: https://oapl.com.au/
+        - img "OAPL" [ref=f6e84]
+      - link [ref=f6e85] [cursor=pointer]:
+        - /url: https://amputeesnsw.org.au/
+        - img "AmputeesNSW" [ref=f6e86]
+      - link [ref=f6e87] [cursor=pointer]:
+        - /url: https://www.limbs4life.org.au/
+        - img "Limbs4Life" [ref=f6e88]
+  - generic [ref=f6e96]:
+    - text: The Product
+    - heading "One system, built to adapt." [level=2] [ref=f6e97]
+    - list [ref=f6e98]:
+      - listitem [ref=f6e99]: Modular socket, pylon, and foot components
+      - listitem [ref=f6e101]: Field-serviceable — swap parts without a full refit
+      - listitem [ref=f6e103]: Built from durable, low-cost materials
+  - generic [ref=f6e106]:
+    - generic [ref=f6e107]:
+      - text: Our Mission
+      - heading "Movement shouldn't be a luxury." [level=2] [ref=f6e108]
+    - generic [ref=f6e109]:
+      - paragraph [ref=f6e110]: Millions of people who need a prosthetic limb can't access one — cost, distance from a clinic, and lack of local expertise get in the way. We're building a modular transtibial system that can be assembled and fitted locally, at a fraction of the cost of traditional devices.
+      - link "Learn more about our mission" [ref=f6e111] [cursor=pointer]:
+        - /url: /mission
+      - generic [ref=f6e112]:
+        - generic [ref=f6e113]:
+          - generic [ref=f6e114]: 80%
+          - generic [ref=f6e115]: Lower cost
+        - generic [ref=f6e116]:
+          - generic [ref=f6e117]: Local
+          - generic [ref=f6e118]: Clinical assembly
+        - generic [ref=f6e119]:
+          - generic [ref=f6e120]: Modular
+          - generic [ref=f6e121]: Component design
+  - generic [ref=f6e123]:
+    - generic [ref=f6e124]:
+      - text: What We Do
+      - heading "From clinic to comfort." [level=2] [ref=f6e125]
+    - generic [ref=f6e126]:
+      - generic [ref=f6e127]:
+        - heading "Clinical Assessment" [level=3] [ref=f6e129]
+        - paragraph [ref=f6e130]: Local clinicians take fit measurements using a lightweight kit — no specialist equipment required.
+      - generic [ref=f6e131]:
+        - heading "Local Assembly" [level=3] [ref=f6e133]
+        - paragraph [ref=f6e134]: Modular components snap together on-site, cutting lead time from months to days.
+      - generic [ref=f6e135]:
+        - heading "Ongoing Support" [level=3] [ref=f6e137]
+        - paragraph [ref=f6e138]: Worn parts are replaced individually instead of remaking the entire limb.
+  - button "Open Next.js Dev Tools" [ref=f6e144] [cursor=pointer]
