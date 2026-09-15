@@ -1,5 +1,5 @@
 import { MissionTimeline } from "./MissionTimeline";
-import { colors, accent } from "../components/Hero";
+import { colors, accent } from "../components/theme";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -82,7 +82,7 @@ export default function MissionPage() {
               style={{ color: colors[300] }}
             >
               Millions of people who need a prosthetic limb can&apos;t access
-              one cost, distance from a clinic, and lack of local expertise
+              one — cost, distance from a clinic, and lack of local expertise
               get in the way. We exist to close that gap.
             </p>
             <p
@@ -91,7 +91,7 @@ export default function MissionPage() {
             >
               Prockets is a modular transtibial prosthetic system designed for
               affordable access, local clinical assembly, and modular component
-              replacement so a limb can be built, fitted, and repaired close
+              replacement — so a limb can be built, fitted, and repaired close
               to where someone actually lives.
             </p>
           </div>
