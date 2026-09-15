@@ -1,3 +1,4 @@
+import { MissionTimeline } from "./MissionTimeline";
 import { colors, accent } from "../components/Hero";
 import { Metadata } from "next";
 
@@ -9,28 +10,55 @@ export const metadata: Metadata = {
 
 const timeline = [
   {
-    year: "2025",
-    title: "Founded",
+    id: 1,
+    date: "2021",
+    title: "Preliminary research",
     description:
-      "Started as an Enactus UNSW venture after seeing how many people locally couldn't access a prosthetic limb.",
+      "Preliminary market research along with early stage prosthetic research.",
   },
   {
-    year: "Early 2026",
-    title: "First prototype",
-    description:
-      "Built the first modular transtibial prototype — socket, pylon, and foot as swappable parts.",
+    id: 2,
+    date: "2022",
+    title: "Prockets established",
+    description: "Prockets established as an Enactus UNSW project.",
   },
   {
-    year: "2026",
-    title: "Runner-up, Enactus Australia",
+    id: 3,
+    date: "2023/2024",
+    title: "Building partnerships",
     description:
-      "Placed Early Stage Runner-Up at the Enactus Australia 2026 Championship.",
+      "Connecting with partners, continued market research and brand establishment.",
   },
   {
-    year: "What's next",
-    title: "Clinic pilots",
+    id: 4,
+    date: "2025",
+    title: "As it is",
     description:
-      "Field-testing the assembly process with local clinicians ahead of a wider rollout.",
+      "Prototyping and testing a number of potential sockets and materials.",
+  },
+  {
+    id: 5,
+    date: "2026",
+    title: "Redefining our goal",
+    description:
+      "We switched our focus from mainly the socket to developing a whole prosthetic, as well as making that prosthetic lower-limb, to maximise our impact on Australian amputees. This year, we achieved a lot, including:",
+    points: [
+      "Creating a complete model of our prosthetic design in CAD",
+      "Fully 3D-printing a physical prototype for testing and to aid our presentation",
+      "Placing 2nd in the Early Stage Competition at the Enactus National Championship",
+    ],
+  },
+  {
+    id: 6,
+    date: "Onward",
+    title: "What's next",
+    description:
+      "In future, we will be working towards ARTG approval and conducting a small scale pilot program for testing of the design. We will also be working with Limbs4Life to connect with amputees and clinics to gain feedback and commercialise our model. Our main activities will include:",
+    points: [
+      "Developing and testing our design, working directly with amputees",
+      "Producing technical documentation in order to demonstrate compliance with TGA regulations",
+      "Reaching out to clinics to launch our pilot program",
+    ],
   },
 ];
 
@@ -38,7 +66,7 @@ export default function MissionPage() {
   return (
     <>
       <section
-        className="px-8 py-24 md:px-20 md:py-32"
+        className="px-8 py-14 md:px-20 md:py-20"
         style={{ background: colors[800], color: colors[100] }}
       >
         <div className="max-w-3xl mx-auto">
@@ -54,7 +82,7 @@ export default function MissionPage() {
               style={{ color: colors[300] }}
             >
               Millions of people who need a prosthetic limb can&apos;t access
-              one — cost, distance from a clinic, and lack of local expertise
+              one cost, distance from a clinic, and lack of local expertise
               get in the way. We exist to close that gap.
             </p>
             <p
@@ -63,7 +91,7 @@ export default function MissionPage() {
             >
               Prockets is a modular transtibial prosthetic system designed for
               affordable access, local clinical assembly, and modular component
-              replacement — so a limb can be built, fitted, and repaired close
+              replacement so a limb can be built, fitted, and repaired close
               to where someone actually lives.
             </p>
           </div>
@@ -71,7 +99,7 @@ export default function MissionPage() {
       </section>
 
       <section
-        className="px-8 py-24 md:px-20 md:py-32"
+        className="px-8 py-14 md:px-20 md:py-20"
         style={{ background: colors[900], color: colors[100] }}
       >
         <div className="max-w-3xl mx-auto">
@@ -87,39 +115,12 @@ export default function MissionPage() {
           >
             How we got here.
           </h2>
-          <div className="mt-16 space-y-12">
-            {timeline.map((item) => (
-              <div key={item.title} className="relative pl-8">
-                <div
-                  className="absolute top-1.5 left-0 w-4 h-px"
-                  style={{ background: accent.DEFAULT }}
-                ></div>
-                <div
-                  className="text-xs font-mono uppercase tracking-wide opacity-70"
-                  style={{ color: colors[200] }}
-                >
-                  {item.year}
-                </div>
-                <h3
-                  className="mt-2 text-lg font-light"
-                  style={{ color: colors[100] }}
-                >
-                  {item.title}
-                </h3>
-                <p
-                  className="mt-2 text-sm font-thin leading-relaxed"
-                  style={{ color: colors[300] }}
-                >
-                  {item.description}
-                </p>
-              </div>
-            ))}
-          </div>
+          <MissionTimeline items={timeline} />
         </div>
       </section>
 
       <section
-        className="px-8 py-24 md:px-20 md:py-32"
+        className="px-8 py-14 md:px-20 md:py-20"
         style={{ background: colors[800], color: colors[100] }}
       >
         <div className="max-w-3xl mx-auto">
