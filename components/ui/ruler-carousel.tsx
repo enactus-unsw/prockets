@@ -99,9 +99,7 @@ export function RulerCarousel({
                 onClick={() => onSelect(item.originalIndex)}
                 className={cn(
                   "text-2xl md:text-4xl font-heading whitespace-nowrap cursor-pointer flex items-center justify-center",
-                  isActive
-                    ? "text-white"
-                    : "text-white/40 hover:text-white/60",
+                  isActive ? "text-white" : "text-white/40 hover:text-white/60",
                 )}
                 animate={{
                   scale: isActive ? 1 : 0.75,
