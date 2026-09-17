@@ -48,7 +48,7 @@ export function Footer() {
             </span>
           </Link>
           <p
-            className="mt-4 max-w-xs text-sm font-thin leading-relaxed"
+            className="mt-4 max-w-xs text-sm  leading-relaxed"
             style={{ color: colors[300] }}
           >
             Affordable, modular prosthetics designed to move with you.
@@ -67,7 +67,7 @@ export function Footer() {
               <li key={link.href}>
                 <Link
                   href={link.href}
-                  className="text-sm font-thin opacity-70 transition-opacity hover:opacity-100"
+                  className="text-sm  opacity-70 transition-opacity hover:opacity-100"
                   style={{ color: colors[200] }}
                 >
                   {link.label}
@@ -91,7 +91,7 @@ export function Footer() {
                   href={link.href}
                   target={link.external ? "_blank" : undefined}
                   rel={link.external ? "noopener noreferrer" : undefined}
-                  className="text-sm font-thin opacity-70 transition-opacity hover:opacity-100"
+                  className="text-sm  opacity-70 transition-opacity hover:opacity-100"
                   style={{ color: colors[200] }}
                 >
                   {link.label}

@@ -69,7 +69,7 @@ export function ContactForm() {
         <p className="text-lg font-light" style={{ color: colors[50] }}>
           Thanks for reaching out.
         </p>
-        <p className="mt-2 text-sm font-thin" style={{ color: colors[300] }}>
+        <p className="mt-2 text-sm " style={{ color: colors[300] }}>
           We&apos;ll get back to you soon.
         </p>
       </div>

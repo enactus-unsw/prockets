@@ -96,7 +96,7 @@ export default function ServicesPage() {
                   {stage.title}
                 </h2>
                 <p
-                  className="mt-3 text-lg font-thin leading-relaxed"
+                  className="mt-3 text-lg  leading-relaxed"
                   style={{ color: colors[300] }}
                 >
                   {stage.detail}
