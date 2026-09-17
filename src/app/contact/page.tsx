@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import { ExternalLink, Mail } from "lucide-react";
 import { colors, accent } from "../components/theme";
 import { ContactForm } from "./ContactForm";
 
@@ -7,24 +8,52 @@ export const metadata: Metadata = {
   description: "Get in touch with the Prockets team.",
 };
 
+/**
+ * lucide-react dropped its brand icons, so this is drawn to match the rest of
+ * the set: 24x24 box, currentColor stroke, 2px width, round caps and joins.
+ */
+function InstagramIcon({ size = 16 }: { size?: number }) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+    >
+      <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+      <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+      <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+    </svg>
+  );
+}
+
 const socials = [
   {
     label: "Enactus UNSW Website",
     cta: "Take Me There",
     href: "https://enactusunsw.org/",
     external: true,
+    Icon: ExternalLink,
   },
   {
     label: "Email",
     cta: "prockets.team@enactusunsw.org",
     href: "mailto:prockets.team@enactusunsw.org",
     external: false,
+    Icon: Mail,
   },
   {
     label: "Instagram",
     cta: "@prockets.au",
     href: "https://www.instagram.com/prockets.au?utm_source=ig_web_button_share_sheet",
     external: true,
+    Icon: InstagramIcon,
   },
 ];
 
@@ -46,13 +75,13 @@ export default function ContactPage() {
             Contact
           </span>
           <h1
-            className="mt-4 text-3xl font-extralight leading-tight md:text-4xl"
+            className="mt-4 text-3xl font-heading leading-tight md:text-4xl"
             style={{ color: colors[50] }}
           >
             Let&apos;s connect.
           </h1>
           <p
-            className="mt-6 text-base font-thin leading-relaxed"
+            className="mt-6 text-base font-normal leading-relaxed"
             style={{ color: colors[300] }}
           >
             Whether you&apos;re an amputee, a clinician, a potential partner, or
@@ -73,9 +102,10 @@ export default function ContactPage() {
                   href={social.href}
                   target={social.external ? "_blank" : undefined}
                   rel={social.external ? "noopener noreferrer" : undefined}
-                  className="inline-block rounded-full px-6 py-3 text-sm font-medium transition-colors hover:opacity-90"
+                  className="inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-medium transition-colors hover:opacity-90"
                   style={{ background: accent.DEFAULT, color: accent.ink }}
                 >
+                  <social.Icon size={16} aria-hidden="true" />
                   {social.cta}
                 </a>
               </div>
@@ -88,16 +118,16 @@ export default function ContactPage() {
           style={{ background: colors[900] }}
         >
           <h2
-            className="text-2xl font-extralight leading-tight"
+            className="text-2xl font-heading leading-tight"
             style={{ color: colors[50] }}
           >
             Send us a message.
           </h2>
           <p
-            className="mt-3 text-sm font-thin leading-relaxed"
+            className="mt-3 text-sm font-normal leading-relaxed"
             style={{ color: colors[300] }}
           >
-            Fill out the form and a real person will get back to you.
+            Fill out the form and we will get back to you!
           </p>
           <div className="mt-8">
             <ContactForm />
