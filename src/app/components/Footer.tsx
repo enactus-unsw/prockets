@@ -4,6 +4,7 @@ import { colors, accent } from "./theme";
 import { socialLinks } from "./socials";
 
 const navLinks = [
+  { href: "/product", label: "Product" },
   { href: "/services", label: "Services" },
   { href: "/mission", label: "Mission" },
   { href: "/contact", label: "Contact" },
