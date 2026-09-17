@@ -18,6 +18,8 @@ export const colors = {
   700: "#332e28",
   800: "#23201c",
   900: "#171512",
+  nav: "#131510",
+  footer: "#131510",
 };
 
 /** Logo amber. Used sparingly: primary CTA, active nav, rules, hero glow. */

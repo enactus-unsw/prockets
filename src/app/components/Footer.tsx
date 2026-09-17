@@ -25,7 +25,7 @@ export function Footer() {
     <footer
       className="border-t px-8 py-12 md:px-16 md:py-16"
       style={{
-        background: colors[800],
+        background: colors["footer"],
         color: colors[100],
         borderColor: `${colors[200]}1a`,
       }}
