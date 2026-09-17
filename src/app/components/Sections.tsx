@@ -1,7 +1,9 @@
 import Link from "next/link";
 import Image from "next/image";
+import { ArrowRight } from "lucide-react";
 import { colors, accent } from "./Hero";
-import { ProductViewer } from "./ProductViewer";
+import { ProductShowcase } from "./ProductViewer";
+import { workflow } from "./workflow";
 
 const sponsors: {
   name: string;
@@ -73,14 +75,8 @@ export function MissionSection() {
     >
       <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 md:gap-20 items-center">
         <div>
-          <span
-            className="font-mono text-xs uppercase tracking-[0.2em] opacity-70"
-            style={{ color: accent.DEFAULT }}
-          >
-            Our Mission
-          </span>
           <h2
-            className="mt-4 text-3xl md:text-5xl font-extralight leading-tight"
+            className="mt-4 text-3xl md:text-5xl font-heading leading-tight"
             style={{ color: colors[50] }}
           >
             Movement shouldn&apos;t be a luxury.
@@ -88,21 +84,34 @@ export function MissionSection() {
         </div>
         <div className="space-y-6">
           <p
-            className="text-lg font-thin leading-relaxed"
+            className="text-lg font-normal leading-relaxed"
             style={{ color: colors[300] }}
           >
-            Millions of people who need a prosthetic limb can&apos;t access one
-            — cost, distance from a clinic, and lack of local expertise get in
-            the way. We&apos;re building a modular transtibial system that can
-            be assembled and fitted locally, at a fraction of the cost of
-            traditional devices.
+            Every 3 hours, someone in Australia loses their lower limb.
+            <br />
+            <br />
+            However, issues with cost, eligibility and long waiting times mean
+            that people can have a clear clinical need but still lack a simple,
+            affordable route to a prosthetic.
+            <br />
+            <br />
+            We&apos;re building an affordable, modular prosthetic system with a
+            clear regulatory pathway, enabling scalable access and long-term
+            impact.
           </p>
           <Link
             href="/mission"
-            className="inline-block underline underline-offset-4 decoration-1 transition-colors"
+            className="group inline-flex items-center gap-1.5 transition-colors"
             style={{ color: accent.DEFAULT }}
           >
-            Learn more about our mission
+            <span className="underline underline-offset-4 decoration-1">
+              Learn more about our mission
+            </span>
+            <ArrowRight
+              size={16}
+              aria-hidden="true"
+              className="shrink-0 transition-transform group-hover:translate-x-1"
+            />
           </Link>
           <div className="grid grid-cols-3 gap-6 pt-4">
             <div>
@@ -110,7 +119,7 @@ export function MissionSection() {
                 className="text-2xl font-light"
                 style={{ color: colors[100] }}
               >
-                80%
+                70%
               </div>
               <div
                 className="text-xs font-mono uppercase tracking-wide opacity-70"
@@ -154,77 +163,70 @@ export function MissionSection() {
   );
 }
 
-const services = [
-  {
-    title: "Clinical Assessment",
-    description:
-      "Local clinicians take fit measurements using a lightweight kit — no specialist equipment required.",
-  },
-  {
-    title: "Local Assembly",
-    description:
-      "Modular components snap together on-site, cutting lead time from months to days.",
-  },
-  {
-    title: "Ongoing Support",
-    description:
-      "Worn parts are replaced individually instead of remaking the entire limb.",
-  },
-];
-
 export function ServicesSection() {
   return (
     <section
       className="px-8 py-24 md:px-16 md:py-60"
       style={{ background: colors[800], color: colors[100] }}
     >
-      <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 md:gap-20 items-center">
+      <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 md:gap-20 items-start">
         <div>
-          <span
-            className="font-mono text-xs uppercase tracking-[0.2em] opacity-70"
-            style={{ color: accent.DEFAULT }}
-          >
-            What We Do
-          </span>
           <h2
-            className="mt-4 text-3xl md:text-5xl font-extralight leading-tight"
+            className="mt-4 text-3xl md:text-5xl font-heading leading-tight"
             style={{ color: colors[50] }}
           >
             From clinic to comfort.
           </h2>
+          <p
+            className="mt-6 text-lg font-normal leading-relaxed"
+            style={{ color: colors[300] }}
+          >
+            Prockets plugs into the clinic network that already exists — four
+            steps from referral to a fitted limb.
+          </p>
+          <Link
+            href="/services"
+            className="group mt-6 inline-flex items-center gap-1.5 transition-colors"
+            style={{ color: accent.DEFAULT }}
+          >
+            <span className="underline underline-offset-4 decoration-1">
+              See how it works
+            </span>
+            <ArrowRight
+              size={16}
+              aria-hidden="true"
+              className="shrink-0 transition-transform group-hover:translate-x-1"
+            />
+          </Link>
         </div>
-        <div className="grid sm:grid-cols-3 gap-8">
-          {services.map((service) => (
-            <div key={service.title}>
+        <ol className="grid sm:grid-cols-2 gap-8">
+          {workflow.map((stage) => (
+            <li key={stage.step}>
               <div
-                className="w-8 h-px mb-4"
-                style={{ background: accent.DEFAULT }}
-              ></div>
+                className="font-medium underline font-mono tracking-[0.2em] mb-3"
+                style={{ color: accent.DEFAULT }}
+              >
+                {stage.step}
+              </div>
               <h3
-                className="text-sm font-mono uppercase tracking-wide mb-2"
+                className="text-md font-bold uppercase tracking-wide mb-2"
                 style={{ color: colors[100] }}
               >
-                {service.title}
+                {stage.title}
               </h3>
               <p
-                className="text-sm font-thin leading-relaxed"
+                className="text-md font-normal leading-relaxed"
                 style={{ color: colors[300] }}
               >
-                {service.description}
+                {stage.summary}
               </p>
-            </div>
+            </li>
           ))}
-        </div>
+        </ol>
       </div>
     </section>
   );
 }
-
-const productFeatures = [
-  "Modular socket, pylon, and foot components",
-  "Field-serviceable — swap parts without a full refit",
-  "Built from durable, low-cost materials",
-];
 
 export function ProductSection() {
   return (
@@ -233,40 +235,25 @@ export function ProductSection() {
       style={{ background: colors[800], color: colors[100] }}
     >
       <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 md:gap-20 items-center">
-        <div
-          className="order-2 md:order-1 aspect-square rounded-lg border overflow-hidden"
-          style={{ borderColor: `${colors[200]}33` }}
-        >
-          <ProductViewer />
-        </div>
+        <ProductShowcase />
         <div className="order-1 md:order-2">
-          <span
-            className="font-mono text-xs uppercase tracking-[0.2em] opacity-70"
-            style={{ color: accent.DEFAULT }}
-          >
-            The Product
-          </span>
           <h2
-            className="mt-4 text-3xl md:text-5xl font-extralight leading-tight"
+            className="mt-4 text-3xl md:text-5xl font-heading leading-tight"
             style={{ color: colors[50] }}
           >
             One system, built to adapt.
           </h2>
-          <ul className="mt-6 space-y-3">
-            {productFeatures.map((feature) => (
-              <li
-                key={feature}
-                className="flex items-start gap-3 text-md font-medium leading-relaxed"
-                style={{ color: colors[300] }}
-              >
-                <span
-                  className="mt-2 w-1.5 h-1.5 rounded-full shrink-0"
-                  style={{ background: accent.DEFAULT }}
-                ></span>
-                {feature}
-              </li>
-            ))}
-          </ul>
+          <p
+            className="mt-6 text-lg font-normal leading-relaxed"
+            style={{ color: colors[300] }}
+          >
+            Prockets uses a modular socket, pylon, and foot components and is
+            field-serviceable, where parts can be swapped without a full refit.
+            <br />
+            <br />
+            Most importantly, our prosthetics are built from durable, low-cost
+            materials.
+          </p>
         </div>
       </div>
     </section>
