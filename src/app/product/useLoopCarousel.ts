@@ -11,6 +11,8 @@ export interface PartItem {
   rotation: [number, number, number];
   /** Per-part target on-screen size, so a naturally smaller part still fills the frame. */
   targetSize?: number;
+  /** Per-part starting camera distance, tuned by eye alongside targetSize. */
+  cameraZ?: number;
 }
 
 interface InfiniteItem extends PartItem {

@@ -19,12 +19,14 @@ export function PartCanvas({
   onPrev: () => void;
   onNext: () => void;
 }) {
+  const cameraZ = activePart.cameraZ ?? 2.3;
+
   return (
     <div
       className="relative w-full h-[45vh] md:h-[55vh] rounded-lg overflow-hidden"
       style={{ background: BACKDROP }}
     >
-      <Canvas shadows camera={{ fov: 40, position: [0, 0.3, 2.3] }}>
+      <Canvas shadows camera={{ fov: 40, position: [0, 0.3, cameraZ] }}>
         <ambientLight intensity={0.4} />
         {/* Key light sits near the camera so the face turned toward the
             viewer is brightly lit, while the far side falls into shadow. */}
@@ -43,7 +45,7 @@ export function PartCanvas({
             src={activePart.src}
             rotation={activePart.rotation}
             targetSize={activePart.targetSize}
-            cameraPosition={[0, 0.3, 2.3]}
+            cameraPosition={[0, 0.3, cameraZ]}
           />
         </Suspense>
         <ContactShadows

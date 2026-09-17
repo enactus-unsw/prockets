@@ -56,7 +56,7 @@ export default function ContactPage() {
             style={{ color: colors[300] }}
           >
             Whether you&apos;re an amputee, a clinician, a potential partner, or
-            just curious about what we&apos;re building — we&apos;d love to hear
+            just curious about what we&apos;re building, we&apos;d love to hear
             from you.
           </p>
 

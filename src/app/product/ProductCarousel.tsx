@@ -6,36 +6,54 @@ import { PartCanvas } from "./PartCanvas";
 import { RulerCarousel } from "@/components/ui/ruler-carousel";
 import { useLoopCarousel, type PartItem } from "./useLoopCarousel";
 
-const PARTS: PartItem[] = [
+export const PARTS: PartItem[] = [
   {
     id: "upper-outer-pylon",
     title: "UPPER OUTER PYLON",
     src: encodeURI("/product/Upper Outer Pylon.glb"),
     rotation: [0, 0, 0],
+    targetSize: 1.35,
+    cameraZ: 2.55,
   },
   {
     id: "upper-inner-pylon",
     title: "UPPER INNER PYLON",
     src: encodeURI("/product/Upper Inner Pylon.glb"),
     rotation: [0, 0, 0],
+    targetSize: 1.3,
+    cameraZ: 2.5,
   },
   {
     id: "lower-pylon",
     title: "LOWER PYLON",
     src: encodeURI("/product/Lower Pylon.glb"),
-    rotation: [0, 0, 0],
+    rotation: [-0.3316, 0, 0],
+    targetSize: 1.3,
+    cameraZ: 2.4,
   },
   {
     id: "joint",
     title: "JOINT",
     src: encodeURI("/product/Joint.glb"),
-    rotation: [0, 0, 0],
+    rotation: [-0.1571, 0, 0],
+    targetSize: 1.6,
+    cameraZ: 2.3,
   },
   {
     id: "auxetic-foot",
     title: "AUXETIC FOOT",
     src: encodeURI("/product/Auxetic Foot.glb"),
     rotation: [Math.PI, 0, 0],
+    targetSize: 1.6,
+    cameraZ: 2.3,
+  },
+  {
+    id: "final-product",
+    title: "FINAL PRODUCT",
+    src: "/leg.glb",
+    rotation: [-Math.PI / 2, 0, Math.PI],
+    targetSize: 1.45,
+    cameraZ: 2.3,
   },
 ];
 
