@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import { ArrowUpRight } from "lucide-react";
 import { colors, accent } from "./Hero";
 import { ProductShowcase } from "./ProductViewer";
 
@@ -73,14 +74,8 @@ export function MissionSection() {
     >
       <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 md:gap-20 items-center">
         <div>
-          <span
-            className="font-mono text-xs uppercase tracking-[0.2em] opacity-70"
-            style={{ color: accent.DEFAULT }}
-          >
-            Our Mission
-          </span>
           <h2
-            className="mt-4 text-3xl md:text-5xl font-extralight leading-tight"
+            className="mt-4 text-3xl md:text-5xl font-heading leading-tight"
             style={{ color: colors[50] }}
           >
             Movement shouldn&apos;t be a luxury.
@@ -88,21 +83,32 @@ export function MissionSection() {
         </div>
         <div className="space-y-6">
           <p
-            className="text-lg font-thin leading-relaxed"
+            className="text-lg font-normal leading-relaxed"
             style={{ color: colors[300] }}
           >
-            Millions of people who need a prosthetic limb can&apos;t access one
-            — cost, distance from a clinic, and lack of local expertise get in
-            the way. We&apos;re building a modular transtibial system that can
-            be assembled and fitted locally, at a fraction of the cost of
-            traditional devices.
+            Every 3 hours, someone in Australia loses their lower limb. However,
+            issues with cost, eligibility and long waiting times mean that
+            people can have a clear clinical need but still lack a simple,
+            affordable route to a prosthetic.
+            <br />
+            <br />
+            We&apos;re building an affordable, modular prosthetic system with a
+            clear regulatory pathway, enabling scalable access and long-term
+            impact.
           </p>
           <Link
             href="/mission"
-            className="inline-block underline underline-offset-4 decoration-1 transition-colors"
+            className="group inline-flex items-center gap-1.5 transition-colors"
             style={{ color: accent.DEFAULT }}
           >
-            Learn more about our mission
+            <span className="underline underline-offset-4 decoration-1">
+              Learn more about our mission
+            </span>
+            <ArrowUpRight
+              size={16}
+              aria-hidden="true"
+              className="shrink-0 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+            />
           </Link>
           <div className="grid grid-cols-3 gap-6 pt-4">
             <div>
@@ -110,7 +116,7 @@ export function MissionSection() {
                 className="text-2xl font-light"
                 style={{ color: colors[100] }}
               >
-                80%
+                70%
               </div>
               <div
                 className="text-xs font-mono uppercase tracking-wide opacity-70"
