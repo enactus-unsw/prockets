@@ -256,7 +256,7 @@ export function ProductSection() {
             {productFeatures.map((feature) => (
               <li
                 key={feature}
-                className="flex items-start gap-3 text-sm font-thin leading-relaxed"
+                className="flex items-start gap-3 text-md font-medium leading-relaxed"
                 style={{ color: colors[300] }}
               >
                 <span
