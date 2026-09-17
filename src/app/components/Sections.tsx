@@ -203,7 +203,7 @@ export function ServicesSection() {
           {workflow.map((stage) => (
             <li key={stage.step}>
               <div
-                className="font-medium underline font-mono tracking-[0.2em] mb-3"
+                className="font-medium underline underline-offset-4 font-mono tracking-[0.2em] mb-3"
                 style={{ color: accent.DEFAULT }}
               >
                 {stage.step}
