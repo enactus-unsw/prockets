@@ -12,21 +12,25 @@ type ContactPayload = {
 };
 
 export async function POST(request: Request) {
-  const body = (await request.json().catch(() => null)) as ContactPayload | null;
+  const body = (await request
+    .json()
+    .catch(() => null)) as ContactPayload | null;
 
   if (!body?.name || !body?.email || !body?.help) {
     return NextResponse.json(
       { error: "Name, email, and how you can help are required." },
-      { status: 400 }
+      { status: 400 },
     );
   }
 
   const apiKey = process.env.RESEND_API_KEY;
   if (!apiKey) {
-    console.error("Contact form submission received but RESEND_API_KEY is not set.");
+    console.error(
+      "Contact form submission received but RESEND_API_KEY is not set.",
+    );
     return NextResponse.json(
       { error: "Email sending isn't configured yet. Please try again later." },
-      { status: 500 }
+      { status: 500 },
     );
   }
 
@@ -52,7 +56,7 @@ export async function POST(request: Request) {
     console.error("Resend error:", error);
     return NextResponse.json(
       { error: "Something went wrong sending your message. Please try again." },
-      { status: 502 }
+      { status: 502 },
     );
   }
 

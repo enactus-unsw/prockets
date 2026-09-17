@@ -55,9 +55,9 @@ export default function ContactPage() {
             className="mt-6 text-base font-thin leading-relaxed"
             style={{ color: colors[300] }}
           >
-            Whether you&apos;re an amputee, a clinician, a potential partner,
-            or just curious about what we&apos;re building — we&apos;d love
-            to hear from you.
+            Whether you&apos;re an amputee, a clinician, a potential partner, or
+            just curious about what we&apos;re building — we&apos;d love to hear
+            from you.
           </p>
 
           <div className="mt-12 space-y-8">

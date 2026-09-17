@@ -30,13 +30,11 @@ export function MissionTimeline({ items }: { items: TimelineEntry[] }) {
       (entries) => {
         entries.forEach((entry) => {
           if (!entry.isIntersecting) return;
-          const step = Number(
-            (entry.target as HTMLElement).dataset.step ?? 0
-          );
+          const step = Number((entry.target as HTMLElement).dataset.step ?? 0);
           setActiveStep((prev) => Math.max(prev, step));
         });
       },
-      { rootMargin: "0px 0px -45% 0px", threshold: 0 }
+      { rootMargin: "0px 0px -45% 0px", threshold: 0 },
     );
 
     itemRefs.current.forEach((el) => observer.observe(el));

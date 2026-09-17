@@ -4,8 +4,16 @@ import { Suspense, useEffect, useRef } from "react";
 import { Canvas, useThree } from "@react-three/fiber";
 import { ContactShadows, OrbitControls, useGLTF } from "@react-three/drei";
 import * as THREE from "three";
+import { colors } from "./Hero";
 
-const BACKGROUND = "#F5F4F2";
+/**
+ * Studio backdrop for the viewer. Centred on colors[500], which sits at the
+ * same lightness (35) as the neutral grey it replaces, so the model reads
+ * exactly as before — only the hue moves onto the brand ramp. Rendered as a
+ * CSS gradient behind a transparent canvas rather than scene.background, which
+ * paints flat and would cover it.
+ */
+const BACKDROP = `radial-gradient(circle at 50% 42%, ${colors[400]} 0%, ${colors[500]} 45%, ${colors[600]} 100%)`;
 
 useGLTF.preload("/leg.glb");
 
@@ -59,13 +67,11 @@ function LegModel() {
 
 export function ProductViewer() {
   return (
-    <div className="w-full h-full flex items-center justify-center">
-      <Canvas
-        shadows
-        camera={{ fov: 40, position: [0, 0.2, 3] }}
-        style={{ background: BACKGROUND }}
-      >
-        <color attach="background" args={[BACKGROUND]} />
+    <div
+      className="w-full h-full flex items-center justify-center"
+      style={{ background: BACKDROP }}
+    >
+      <Canvas shadows camera={{ fov: 40, position: [0, 0.2, 3] }}>
         <ambientLight intensity={0.6} />
         <directionalLight
           position={[3, 5, 4]}

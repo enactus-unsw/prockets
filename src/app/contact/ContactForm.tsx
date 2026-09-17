@@ -43,7 +43,9 @@ export function ContactForm() {
 
       if (!res.ok) {
         const body = await res.json().catch(() => ({}));
-        throw new Error(body.error || "Something went wrong. Please try again.");
+        throw new Error(
+          body.error || "Something went wrong. Please try again.",
+        );
       }
 
       setStatus("success");
@@ -51,7 +53,9 @@ export function ContactForm() {
     } catch (err) {
       setStatus("error");
       setErrorMessage(
-        err instanceof Error ? err.message : "Something went wrong. Please try again."
+        err instanceof Error
+          ? err.message
+          : "Something went wrong. Please try again.",
       );
     }
   }
