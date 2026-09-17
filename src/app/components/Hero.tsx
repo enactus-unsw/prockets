@@ -1,19 +1,11 @@
 "use client";
 
-import React, { useEffect, useRef } from "react";
+import React, { useEffect } from "react";
 import { colors, accent, alpha } from "./theme";
 
 export { colors, accent, alpha };
 
-/**
- * Diameter of the glow that trails the cursor, in px. The element is centred on
- * the pointer by offsetting half of this, so both uses read from here.
- */
-const GLOW_SIZE = 220;
-
 export function HeroSection() {
-  const gradientRef = useRef<HTMLDivElement>(null);
-
   useEffect(() => {
     // Animate words
     const words = document.querySelectorAll<HTMLElement>(".word");
@@ -25,20 +17,6 @@ export function HeroSection() {
     });
 
     // Mouse gradient
-    const gradient = gradientRef.current;
-    function onMouseMove(e: MouseEvent) {
-      if (gradient) {
-        gradient.style.left = e.clientX - GLOW_SIZE / 2 + "px";
-        gradient.style.top = e.clientY - GLOW_SIZE / 2 + "px";
-        gradient.style.opacity = "1";
-      }
-    }
-    function onMouseLeave() {
-      if (gradient) gradient.style.opacity = "0";
-    }
-    document.addEventListener("mousemove", onMouseMove);
-    document.addEventListener("mouseleave", onMouseLeave);
-
     // Word hover effects
     words.forEach((word) => {
       word.addEventListener("mouseenter", () => {
@@ -48,24 +26,6 @@ export function HeroSection() {
         word.style.textShadow = "none";
       });
     });
-
-    // Click ripple effect
-    function onClick(e: MouseEvent) {
-      const ripple = document.createElement("div");
-      ripple.style.position = "fixed";
-      ripple.style.left = e.clientX + "px";
-      ripple.style.top = e.clientY + "px";
-      ripple.style.width = "4px";
-      ripple.style.height = "4px";
-      ripple.style.background = alpha(accent.DEFAULT, 0.6);
-      ripple.style.borderRadius = "50%";
-      ripple.style.transform = "translate(-50%, -50%)";
-      ripple.style.pointerEvents = "none";
-      ripple.style.animation = "pulse-glow 1s ease-out forwards";
-      document.body.appendChild(ripple);
-      setTimeout(() => ripple.remove(), 1000);
-    }
-    document.addEventListener("click", onClick);
 
     // Floating elements on scroll
     let scrolled = false;
@@ -84,9 +44,6 @@ export function HeroSection() {
     window.addEventListener("scroll", onScroll);
 
     return () => {
-      document.removeEventListener("mousemove", onMouseMove);
-      document.removeEventListener("mouseleave", onMouseLeave);
-      document.removeEventListener("click", onClick);
       window.removeEventListener("scroll", onScroll);
     };
   }, []);
@@ -443,17 +400,6 @@ export function HeroSection() {
           </div>
         </div>
       </div>
-
-      <div
-        id="mouse-gradient"
-        ref={gradientRef}
-        className="fixed pointer-events-none rounded-full blur-2xl transition-all duration-500 ease-out opacity-0"
-        style={{
-          width: GLOW_SIZE,
-          height: GLOW_SIZE,
-          background: `radial-gradient(circle, ${alpha(accent.DEFAULT, 0.08)} 0%, ${alpha(accent.DEFAULT, 0.03)} 45%, transparent 70%)`,
-        }}
-      ></div>
     </div>
   );
 }
