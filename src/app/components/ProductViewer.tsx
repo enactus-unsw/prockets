@@ -1,14 +1,11 @@
 "use client";
 
-import { Suspense, useEffect, useRef, useState } from "react";
-import { Canvas, useThree } from "@react-three/fiber";
+import { Suspense, useState } from "react";
+import { Canvas } from "@react-three/fiber";
 import { ContactShadows, OrbitControls, useGLTF } from "@react-three/drei";
-import * as THREE from "three";
-import { colors } from "./Hero";
-import { GlbModel } from "./GlbModel";
 import { Rotate3d } from "lucide-react";
 import { colors, accent } from "./theme";
-
+import { GlbModel } from "./GlbModel";
 
 /**
  * Studio backdrop for the viewer. Centred on colors[500], which sits at the
