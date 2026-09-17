@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import { ExternalLink, Mail } from "lucide-react";
 import { colors, accent } from "../components/theme";
 import { ContactForm } from "./ContactForm";
+import { socialLinks } from "../components/socials";
 
 export const metadata: Metadata = {
   title: "Contact | Prockets",
@@ -37,21 +38,21 @@ const socials = [
   {
     label: "Enactus UNSW Website",
     cta: "Take Me There",
-    href: "https://enactusunsw.org/",
+    href: socialLinks.enactus,
     external: true,
     Icon: ExternalLink,
   },
   {
     label: "Email",
-    cta: "prockets.team@enactusunsw.org",
-    href: "mailto:prockets.team@enactusunsw.org",
+    cta: socialLinks.emailAddress,
+    href: socialLinks.email,
     external: false,
     Icon: Mail,
   },
   {
     label: "Instagram",
-    cta: "@prockets.au",
-    href: "https://www.instagram.com/prockets.au?utm_source=ig_web_button_share_sheet",
+    cta: socialLinks.instagramHandle,
+    href: socialLinks.instagram,
     external: true,
     Icon: InstagramIcon,
   },

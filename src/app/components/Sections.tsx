@@ -203,19 +203,19 @@ export function ServicesSection() {
           {workflow.map((stage) => (
             <li key={stage.step}>
               <div
-                className="font-medium font-mono tracking-[0.2em] mb-3"
+                className="font-medium underline font-mono tracking-[0.2em] mb-3"
                 style={{ color: accent.DEFAULT }}
               >
                 {stage.step}
               </div>
               <h3
-                className="text-medium font-mono uppercase tracking-wide mb-2"
+                className="text-md font-bold uppercase tracking-wide mb-2"
                 style={{ color: colors[100] }}
               >
                 {stage.title}
               </h3>
               <p
-                className="text-md font-thin leading-relaxed"
+                className="text-md font-normal leading-relaxed"
                 style={{ color: colors[300] }}
               >
                 {stage.summary}
