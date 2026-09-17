@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { colors, accent } from "./Hero";
 import { ProductShowcase } from "./ProductViewer";
 
@@ -86,9 +86,11 @@ export function MissionSection() {
             className="text-lg font-normal leading-relaxed"
             style={{ color: colors[300] }}
           >
-            Every 3 hours, someone in Australia loses their lower limb. However,
-            issues with cost, eligibility and long waiting times mean that
-            people can have a clear clinical need but still lack a simple,
+            Every 3 hours, someone in Australia loses their lower limb.
+            <br />
+            <br />
+            However, issues with cost, eligibility and long waiting times mean
+            that people can have a clear clinical need but still lack a simple,
             affordable route to a prosthetic.
             <br />
             <br />
@@ -104,10 +106,10 @@ export function MissionSection() {
             <span className="underline underline-offset-4 decoration-1">
               Learn more about our mission
             </span>
-            <ArrowUpRight
+            <ArrowRight
               size={16}
               aria-hidden="true"
-              className="shrink-0 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+              className="shrink-0 transition-transform group-hover:translate-x-1"
             />
           </Link>
           <div className="grid grid-cols-3 gap-6 pt-4">
