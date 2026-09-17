@@ -220,12 +220,6 @@ export function ServicesSection() {
   );
 }
 
-const productFeatures = [
-  "Modular socket, pylon, and foot components",
-  "Field-serviceable — swap parts without a full refit",
-  "Built from durable, low-cost materials",
-];
-
 export function ProductSection() {
   return (
     <section
@@ -235,33 +229,23 @@ export function ProductSection() {
       <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 md:gap-20 items-center">
         <ProductShowcase />
         <div className="order-1 md:order-2">
-          <span
-            className="font-mono text-xs uppercase tracking-[0.2em] opacity-70"
-            style={{ color: accent.DEFAULT }}
-          >
-            The Product
-          </span>
           <h2
-            className="mt-4 text-3xl md:text-5xl font-extralight leading-tight"
+            className="mt-4 text-3xl md:text-5xl font-heading leading-tight"
             style={{ color: colors[50] }}
           >
             One system, built to adapt.
           </h2>
-          <ul className="mt-6 space-y-3">
-            {productFeatures.map((feature) => (
-              <li
-                key={feature}
-                className="flex items-start text-md font-medium leading-relaxed"
-                style={{ color: colors[300] }}
-              >
-                <span
-                  className="mt-2 w-1.5 h-1.5 rounded-full shrink-0"
-                  style={{ background: accent.DEFAULT }}
-                ></span>
-                {feature}
-              </li>
-            ))}
-          </ul>
+          <p
+            className="mt-6 text-lg font-normal leading-relaxed"
+            style={{ color: colors[300] }}
+          >
+            Prockets uses a modular socket, pylon, and foot components and is
+            field-serviceable, where parts can be swapped without a full refit.
+            <br />
+            <br />
+            Most importantly, our prosthetics are built from durable, low-cost
+            materials.
+          </p>
         </div>
       </div>
     </section>
