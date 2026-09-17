@@ -13,6 +13,8 @@ export interface PartItem {
   targetSize?: number;
   /** Per-part starting camera distance, tuned by eye alongside targetSize. */
   cameraZ?: number;
+  /** Short blurb about the part, shown below the viewer (desktop) or behind the info toggle (mobile). */
+  description: string;
 }
 
 interface InfiniteItem extends PartItem {

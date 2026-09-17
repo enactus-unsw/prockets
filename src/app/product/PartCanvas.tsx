@@ -1,10 +1,10 @@
 "use client";
 
-import { Suspense } from "react";
+import { Suspense, useEffect, useState } from "react";
 import { Canvas } from "@react-three/fiber";
 import { ContactShadows, OrbitControls } from "@react-three/drei";
-import { ChevronLeft, ChevronRight } from "lucide-react";
-import { colors } from "../components/Hero";
+import { ChevronLeft, ChevronRight, Info, X } from "lucide-react";
+import { colors, accent } from "../components/Hero";
 import { GlbModel } from "../components/GlbModel";
 import type { PartItem } from "./useLoopCarousel";
 
@@ -20,6 +20,13 @@ export function PartCanvas({
   onNext: () => void;
 }) {
   const cameraZ = activePart.cameraZ ?? 2.3;
+  const [infoOpen, setInfoOpen] = useState(false);
+
+  // Close the info panel whenever the active part changes, so switching
+  // parts doesn't leave the previous part's blurb showing.
+  useEffect(() => {
+    setInfoOpen(false);
+  }, [activePart.id]);
 
   return (
     <div
@@ -83,6 +90,39 @@ export function PartCanvas({
       >
         <ChevronRight className="size-5 md:size-6" />
       </button>
+
+      {/* Mobile only — desktop shows the description below the carousel
+          instead (see ProductCarousel), so there's no need for a toggle. */}
+      <button
+        type="button"
+        onClick={() => setInfoOpen((open) => !open)}
+        aria-label={infoOpen ? "Hide part info" : "Show part info"}
+        aria-expanded={infoOpen}
+        className="md:hidden absolute right-3 top-3 flex items-center justify-center size-9 rounded-full border cursor-pointer transition-colors hover:bg-white/10"
+        style={{ borderColor: `${colors[100]}33`, color: colors[50] }}
+      >
+        {infoOpen ? <X className="size-4" /> : <Info className="size-4" />}
+      </button>
+
+      {infoOpen && (
+        <div
+          className="md:hidden absolute inset-x-3 top-14 rounded-lg border p-4"
+          style={{
+            borderColor: `${colors[200]}33`,
+            background: `${colors[900]}f2`,
+          }}
+        >
+          <h2
+            className="font-mono text-[0.65rem] uppercase tracking-[0.2em] mb-2"
+            style={{ color: accent.DEFAULT }}
+          >
+            {activePart.title}
+          </h2>
+          <p className="text-sm font-normal leading-relaxed text-white">
+            {activePart.description}
+          </p>
+        </div>
+      )}
     </div>
   );
 }
