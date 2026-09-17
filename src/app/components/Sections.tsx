@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { colors, accent } from "./Hero";
-import { ProductViewer } from "./ProductViewer";
+import { ProductShowcase } from "./ProductViewer";
 
 const sponsors: {
   name: string;
@@ -233,12 +233,7 @@ export function ProductSection() {
       style={{ background: colors[800], color: colors[100] }}
     >
       <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 md:gap-20 items-center">
-        <div
-          className="order-2 md:order-1 aspect-square rounded-lg border overflow-hidden"
-          style={{ borderColor: `${colors[200]}33` }}
-        >
-          <ProductViewer />
-        </div>
+        <ProductShowcase />
         <div className="order-1 md:order-2">
           <span
             className="font-mono text-xs uppercase tracking-[0.2em] opacity-70"
