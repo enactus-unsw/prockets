@@ -17,7 +17,7 @@ export const PARTS: PartItem[] = [
     targetSize: 1.35,
     cameraZ: 2.55,
     description:
-      "Built from a triangular lattice structure that minimises material while keeping high structural strength. It threads onto the Upper Inner Pylon, so this outer shell can be replaced on its own without remaking the whole limb.",
+      "Built from a triangular lattice structure in recycled PETG, minimising material while keeping high structural strength. It threads onto the Upper Inner Pylon, so this outer shell can be replaced on its own without remaking the whole limb.",
   },
   {
     id: "upper-inner-pylon",
@@ -27,7 +27,7 @@ export const PARTS: PartItem[] = [
     targetSize: 1.3,
     cameraZ: 2.5,
     description:
-      "Also built from a triangular lattice, but positioned as an inner layer that overlaps the gaps in the Outer Pylon's structure, making the combined assembly even stronger. It carries load onward to the Lower Pylon and can be swapped on its own if worn or damaged.",
+      "Also built from a triangular lattice, but in polycarbonate and positioned as an inner layer that overlaps the gaps in the Outer Pylon's structure, making the combined assembly even stronger. It carries load onward to the Lower Pylon and can be swapped on its own if worn or damaged.",
   },
   {
     id: "lower-pylon",
@@ -37,7 +37,7 @@ export const PARTS: PartItem[] = [
     targetSize: 1.3,
     cameraZ: 2.4,
     description:
-      "Continues the same triangular lattice construction down to the Joint and foot, minimising material while keeping the structure strong. Standardised so it can be produced, stocked, and swapped independently of the rest of the leg.",
+      "Continues the same triangular lattice construction down to the Joint and foot, using the same recycled PETG and polycarbonate as the upper pylons. It was originally an outer and inner layer like the upper assembly, but the two were merged into a single part here.",
   },
   {
     id: "joint",
@@ -57,7 +57,7 @@ export const PARTS: PartItem[] = [
     targetSize: 1.6,
     cameraZ: 2.3,
     description:
-      "The Achilles tendon naturally exhibits auxetic behaviour, so we recreated that structure at the back of the foot. An auxetic lattice gets wider, not narrower, when stretched, helping the foot absorb impact and return energy through each step, much like the real tendon it's modelled on.",
+      "The Achilles tendon naturally exhibits auxetic behaviour, so we recreated that structure at the back of the foot. Both the main foot body and the auxetic structure are built from TPU 68D, a flexible material that lets the lattice get wider, not narrower, when stretched, helping absorb impact and return energy through each step, much like the real tendon it's modelled on.",
   },
   {
     id: "final-product",
@@ -67,7 +67,7 @@ export const PARTS: PartItem[] = [
     targetSize: 1.45,
     cameraZ: 2.3,
     description:
-      "The fully assembled Prockets system: upper and lower pylons, joint, and auxetic foot combined into one modular transtibial prosthesis. Any component above can be unbolted and replaced on its own, so wear or damage never means remaking the whole limb.",
+      "The fully assembled Prockets system: upper and lower pylons, joint, and auxetic foot combined into one modular transtibial prosthesis. The parts aren't held together with bolts, they connect through the threaded and socketed interfaces built into each one, so any component above can still be swapped on its own without remaking the whole limb.",
   },
 ];
 
