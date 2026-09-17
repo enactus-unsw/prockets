@@ -57,21 +57,18 @@ export function MissionTimeline({ items }: { items: TimelineEntry[] }) {
           <TimelineHeader>
             <TimelineSeparator className="transition-colors duration-500" />
             <TimelineDate
-              className="text-xs font-mono uppercase tracking-wide"
+              className="text-xs font-normal uppercase tracking-wide"
               style={{ color: colors[200] }}
             >
               {item.date}
             </TimelineDate>
-            <TimelineTitle
-              className="text-lg font-light"
-              style={{ color: colors[100] }}
-            >
+            <TimelineTitle className="text-lg" style={{ color: colors[100] }}>
               {item.title}
             </TimelineTitle>
             <TimelineIndicator className="transition-colors duration-500" />
           </TimelineHeader>
           <TimelineContent
-            className="text-sm font-thin leading-relaxed"
+            className="text-sm font-normal leading-8"
             style={{ color: colors[300] }}
           >
             <p>{item.description}</p>
