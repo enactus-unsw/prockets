@@ -89,7 +89,7 @@ export function ProductCarousel() {
           The Product
         </span>
         <h1
-          className="mt-4 mb-8 text-3xl md:text-5xl font-extralight leading-tight"
+          className="mt-4 mb-8 text-3xl md:text-5xl font-heading leading-tight"
           style={{ color: colors[50] }}
         >
           Every component, up close.
@@ -113,7 +113,10 @@ export function ProductCarousel() {
           >
             {carousel.activePart.title}
           </h2>
-          <p className="text-sm font-normal leading-relaxed text-white">
+          <p
+            className="text-sm font-normal leading-relaxed"
+            style={{ color: colors[50] }}
+          >
             {carousel.activePart.description}
           </p>
         </div>

@@ -118,7 +118,10 @@ export function PartCanvas({
           >
             {activePart.title}
           </h2>
-          <p className="text-sm font-normal leading-relaxed text-white">
+          <p
+            className="text-sm font-normal leading-relaxed"
+            style={{ color: colors[50] }}
+          >
             {activePart.description}
           </p>
         </div>
