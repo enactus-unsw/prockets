@@ -18,7 +18,6 @@ const BACKDROP = `radial-gradient(circle at 50% 42%, ${colors[400]} 0%, ${colors
 
 useGLTF.preload("/leg.glb");
 
-
 export function ProductViewer({ onInteract }: { onInteract?: () => void }) {
   return (
     <div

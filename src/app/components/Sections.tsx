@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
-import { colors, accent } from "./Hero";
+import { colors, accent } from "./theme";
 import { ProductShowcase } from "./ProductViewer";
 import { workflow } from "./workflow";
 
@@ -254,6 +254,20 @@ export function ProductSection() {
             Most importantly, our prosthetics are built from durable, low-cost
             materials.
           </p>
+          <Link
+            href="/product"
+            className="group inline-flex mt-5 items-center gap-1.5 transition-colors"
+            style={{ color: accent.DEFAULT }}
+          >
+            <span className="underline underline-offset-4 decoration-1">
+              See the full product
+            </span>
+            <ArrowRight
+              size={16}
+              aria-hidden="true"
+              className="shrink-0 transition-transform group-hover:translate-x-1"
+            />
+          </Link>
         </div>
       </div>
     </section>
