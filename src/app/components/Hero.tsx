@@ -238,13 +238,13 @@ export function HeroSection() {
           >
             <div className="mb-4 md:mb-6">
               <span className="word" data-delay="1600">
-                Affordable.
+                <em className="font-display">Affordable.</em>
               </span>
               <span className="word" data-delay="1750">
-                Mobile.
+                <em className="font-display">Mobile.</em>
               </span>
               <span className="word" data-delay="1900">
-                Stable.
+                <em className="font-display">Stable.</em>
               </span>
               <br />
               <span className="word" data-delay="2050">

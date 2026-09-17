@@ -79,7 +79,8 @@ export function MissionSection() {
             className="mt-4 text-3xl md:text-5xl font-heading leading-tight"
             style={{ color: colors[50] }}
           >
-            Movement shouldn&apos;t be a luxury.
+            Movement{" "}
+            <em className="font-display">shouldn&apos;t be a luxury.</em>
           </h2>
         </div>
         <div className="space-y-6">
@@ -175,7 +176,7 @@ export function ServicesSection() {
             className="mt-4 text-3xl md:text-5xl font-heading leading-tight"
             style={{ color: colors[50] }}
           >
-            From clinic to comfort.
+            From <em className="font-display">clinic to comfort.</em>
           </h2>
           <p
             className="mt-6 text-lg font-normal leading-relaxed"
@@ -241,7 +242,7 @@ export function ProductSection() {
             className="mt-4 text-3xl md:text-5xl font-heading leading-tight"
             style={{ color: colors[50] }}
           >
-            One system, built to adapt.
+            One system, <em className="font-display">built to adapt.</em>
           </h2>
           <p
             className="mt-6 text-lg font-normal leading-relaxed"
