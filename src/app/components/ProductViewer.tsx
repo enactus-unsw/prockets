@@ -1,11 +1,11 @@
 "use client";
 
-import { Suspense, useEffect, useRef, useState } from "react";
-import { Canvas, useThree } from "@react-three/fiber";
+import { Suspense, useState } from "react";
+import { Canvas } from "@react-three/fiber";
 import { ContactShadows, OrbitControls, useGLTF } from "@react-three/drei";
-import * as THREE from "three";
 import { Rotate3d } from "lucide-react";
 import { colors, accent } from "./theme";
+import { GlbModel } from "./GlbModel";
 
 /**
  * Studio backdrop for the viewer. Centred on colors[500], which sits at the
@@ -18,53 +18,6 @@ const BACKDROP = `radial-gradient(circle at 50% 42%, ${colors[400]} 0%, ${colors
 
 useGLTF.preload("/leg.glb");
 
-function LegModel() {
-  const { scene } = useGLTF("/leg.glb");
-  const { camera } = useThree();
-  const outerRef = useRef<THREE.Group>(null);
-  const innerRef = useRef<THREE.Group>(null);
-
-  useEffect(() => {
-    scene.traverse((child) => {
-      if (child instanceof THREE.Mesh) {
-        child.castShadow = true;
-        child.receiveShadow = true;
-        child.material = new THREE.MeshStandardMaterial({
-          color: "#111111",
-          roughness: 0.5,
-          metalness: 0.15,
-        });
-      }
-    });
-  }, [scene]);
-
-  useEffect(() => {
-    const box = new THREE.Box3().setFromObject(scene);
-    const center = box.getCenter(new THREE.Vector3());
-    const size = box.getSize(new THREE.Vector3());
-    const maxDimension = Math.max(size.x, size.y, size.z) || 1;
-    const scale = 1.6 / maxDimension;
-
-    if (innerRef.current) {
-      innerRef.current.position.set(-center.x, -center.y, -center.z);
-    }
-    if (outerRef.current) {
-      outerRef.current.rotation.set(-Math.PI / 2, 0, Math.PI);
-      outerRef.current.scale.setScalar(scale);
-    }
-
-    camera.position.set(0, 0.2, 3);
-    camera.lookAt(0, 0, 0);
-  }, [scene, camera]);
-
-  return (
-    <group ref={outerRef}>
-      <group ref={innerRef}>
-        <primitive object={scene} />
-      </group>
-    </group>
-  );
-}
 
 export function ProductViewer({ onInteract }: { onInteract?: () => void }) {
   return (
@@ -84,7 +37,7 @@ export function ProductViewer({ onInteract }: { onInteract?: () => void }) {
         <directionalLight position={[-3, 1, -3]} intensity={0.4} />
         <directionalLight position={[0, -2, 2]} intensity={0.2} />
         <Suspense fallback={null}>
-          <LegModel />
+          <GlbModel src="/leg.glb" />
         </Suspense>
         <ContactShadows
           position={[0, -0.82, 0]}
