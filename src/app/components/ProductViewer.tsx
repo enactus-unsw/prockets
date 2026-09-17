@@ -1,10 +1,11 @@
 "use client";
 
-import { Suspense, useEffect, useRef } from "react";
+import { Suspense, useEffect, useRef, useState } from "react";
 import { Canvas, useThree } from "@react-three/fiber";
 import { ContactShadows, OrbitControls, useGLTF } from "@react-three/drei";
 import * as THREE from "three";
-import { colors } from "./Hero";
+import { Rotate3d } from "lucide-react";
+import { colors, accent } from "./theme";
 
 /**
  * Studio backdrop for the viewer. Centred on colors[500], which sits at the
@@ -65,7 +66,7 @@ function LegModel() {
   );
 }
 
-export function ProductViewer() {
+export function ProductViewer({ onInteract }: { onInteract?: () => void }) {
   return (
     <div
       className="w-full h-full flex items-center justify-center"
@@ -99,8 +100,48 @@ export function ProductViewer() {
           minDistance={1.2}
           maxDistance={4.5}
           makeDefault
+          // OrbitControls dispatches "start" on both pointerdown and wheel,
+          // so this covers a rotate and a zoom alike.
+          onStart={onInteract}
         />
       </Canvas>
+    </div>
+  );
+}
+
+/**
+ * The viewer plus its "drag to rotate" prompt, which retires for good the first
+ * time someone actually rotates or zooms. Fades rather than unmounts so the
+ * layout below it never shifts.
+ */
+export function ProductShowcase() {
+  const [interacted, setInteracted] = useState(false);
+
+  return (
+    <div className="order-2 md:order-1">
+      <div
+        className="mb-3 flex items-center gap-2 transition-opacity duration-500"
+        style={{ opacity: interacted ? 0 : 1 }}
+        aria-hidden={interacted}
+      >
+        <Rotate3d
+          size={14}
+          aria-hidden="true"
+          style={{ color: accent.DEFAULT }}
+        />
+        <span
+          className="font-mono text-[0.65rem] uppercase tracking-[0.2em]"
+          style={{ color: colors[200] }}
+        >
+          Drag to rotate · scroll to zoom
+        </span>
+      </div>
+      <div
+        className="aspect-square rounded-lg border overflow-hidden"
+        style={{ borderColor: `${colors[200]}33` }}
+      >
+        <ProductViewer onInteract={() => setInteracted(true)} />
+      </div>
     </div>
   );
 }
